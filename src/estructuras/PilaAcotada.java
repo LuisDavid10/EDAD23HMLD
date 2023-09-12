@@ -1,10 +1,10 @@
 package estructuras;
 
 /**
- * Write a description of class PilaAcotada here.
+ * clase que modela una pila que tiene un limite fijo de elementos, acotada.
  * 
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Hinojosa Martínez Luis David)
+ * @version (1.0 septiembre 23)
  */
 public class PilaAcotada {
 	// instance variables - replace the example below with your own
@@ -12,7 +12,7 @@ public class PilaAcotada {
 	private int tope;
 
 	/**
-	 * Constructor for objects of class PilaAcotada
+	 * Constructor de objetos de clase PilaAcotada, crea una pila de 10 elementos
 	 */
 	public PilaAcotada() {
 		// initialise instance variables
@@ -21,23 +21,30 @@ public class PilaAcotada {
 	}
 
 	/**
-	 * constructor for objects of class PilaAcotada
+	 * Constructor de objetos de clase PilaAcotada, crea una pila
+	 * de una cantidad proporcionada por el usuario,
+	 * si la cantidad es 0 o menor la pila es de 10 elementos
 	 */
 	public PilaAcotada(int cantidad) {
 		// initialise instance variables
+		//siempre se hace una invocacion al constructor de la super clase
+		//de manera implicita o explicita, escribiendo super(); o con parametros
+		//el documento deve ser la primera instruccion
+		//a menos que invoques a otro constructor de la misma clase
+		//usando la auto referencia thisy entre parentesis
+		//argumentos actuales que coincidan con los formales declarados
+		this();
 		if (cantidad > 0) {
 			pila = new char[cantidad];
-		} else {
-			pila = new char[5];
 		}
 		tope = 0;
 	}
 
 	/**
-	 * An example of a method - replace this comment with your own
+	 * metodo de insercion de elementos en la pila 
 	 * 
-	 * @param y a sample parameter for a method
-	 * @return the sum of x and y
+	 * @param elemtoAInsertar elemento a insertar en el tope de la pila
+	 * @return sin valor de retorno
 	 */
 	public void push(char elemntoAInsertar) throws Exception { // <-se llama parametro o argumento
 		// put your code here
@@ -51,10 +58,10 @@ public class PilaAcotada {
 	}
 
 	/**
-	 * An example of a method - replace this comment with your own
+	 * metodo de eliminacion de la pila 
 	 * 
-	 * @param y a sample parameter for a method
-	 * @return the sum of x and y
+	 * @param sin parametros
+	 * @return el elemento del tope, el ultimo elemento en entrar 
 	 */
 	public char pop() throws Exception {
 		if (!isEmpty()) {
@@ -66,20 +73,20 @@ public class PilaAcotada {
 	}
 
 	/**
-	 * An example of a method - replace this comment with your own
+	 * verifica si la pila esta vacia
 	 * 
-	 * @param y a sample parameter for a method
-	 * @return the sum of x and y
+	 * @param no tiene parametros
+	 * @return true si la pila esta vacia, false en caso contrario
 	 */
 	public boolean isEmpty() {
 		return tope == 0;
 	}
 
 	/**
-	 * An example of a method - replace this comment with your own
+	 * visualiza el elemento del tope de la pila
 	 * 
-	 * @param y a sample parameter for a method
-	 * @return the sum of x and y
+	 * @param sin parametros
+	 * @return el ultimo elemento insertado, sin sacarlo de la pila
 	 */
 	public char tope() throws Exception {// muestra lo que esta arriba el metodo
 		// reportar la excepcion en la firma del metodo
@@ -91,13 +98,13 @@ public class PilaAcotada {
 	}
 
 	/**
-     * An example of a method - replace this comment with your own
+     * verifica si la pila esta llena
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  sin parametros
+	 * @return true si la pila esta llena, false si esta vacia 
      */
     public boolean isFull()
     {
-        return pila=pila.length; 
-    }
+        return tope=pila.length; 
+}
 }
