@@ -68,7 +68,7 @@ public class PilaAcotada {
 			tope--;
 			return pila[tope];
 		}else {
-		throw new Exception("erro, pila esta vacia");
+		throw new Exception("error, pila esta vacia");
 		}
 	}
 
@@ -105,6 +105,7 @@ public class PilaAcotada {
      */
     public boolean isFull()
     {
-        return tope=pila.length; 
+        return tope == pila.length; 
+	}
 }
-}
+
